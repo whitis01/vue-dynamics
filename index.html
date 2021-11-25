@@ -20,6 +20,11 @@
             <ul>
                 <li v-for="task in completedTasks" v-text="task.description"></li>
             </ul>
+            <task-ordered>
+                <task-item>Isaac is Great</task-item>
+                <task-item>Do not forget bullet point one</task-item>
+            </task-ordered>
+            <task-ordered><li>Still Great</li></task-ordered>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <script>
@@ -50,6 +55,7 @@
             })
 
         </script>
+        <script src="main.js"></script>
     </body>
 </html>
 
