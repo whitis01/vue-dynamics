@@ -27,7 +27,7 @@ Vue.component('task-list', {
 
 Vue.component('twitter-hero', {
     name: 'twitter-hero',
-    props: [ 'title', 'tagline' ],
+    props: [ 'title', 'message' ],
     data() {
         return {
             isVisible: true,
@@ -35,22 +35,19 @@ Vue.component('twitter-hero', {
     },
     template:
         `
-            <div class="hero-unit container">
-              <div>
-                <h1>{{ title }}
-                    <button type="button" @click="hideTagLine">X</button>
-                </h1>
-              </div>
-              <p v-show="isVisible">{{ tagline }}</p>
-              <p>
-                <a class="btn btn-primary btn-large">
-                  Learn more
-                </a>
-              </p>
-            </div>
+            <article class="message is-dark">
+                <h1>{{ title }}</h1>
+                <div class="message-header">
+                    <p>Dark</p>
+                    <button class="delete" aria-label="delete" @click="toggleMessage"></button>
+                </div>
+                <div class="message-body" v-show="isVisible">
+                    {{ message }}
+                </div>
+                </article>
         `,
     methods: {
-        hideTagLine() {
+        toggleMessage(): void {
             this.isVisible = !this.isVisible;
         }
     }
