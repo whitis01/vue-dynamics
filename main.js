@@ -25,6 +25,37 @@ Vue.component('task-list', {
 
 });
 
+Vue.component('twitter-hero', {
+    name: 'twitter-hero',
+    props: [ 'title', 'tagline' ],
+    data() {
+        return {
+            isVisible: true,
+        }
+    },
+    template:
+        `
+            <div class="hero-unit container">
+              <div>
+                <h1>{{ title }}
+                    <button type="button" @click="hideTagLine">X</button>
+                </h1>
+              </div>
+              <p v-show="isVisible">{{ tagline }}</p>
+              <p>
+                <a class="btn btn-primary btn-large">
+                  Learn more
+                </a>
+              </p>
+            </div>
+        `,
+    methods: {
+        hideTagLine() {
+            this.isVisible = !this.isVisible;
+        }
+    }
+})
+
 new Vue({
     el: '#root',
 });
