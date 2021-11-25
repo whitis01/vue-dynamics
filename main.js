@@ -7,7 +7,22 @@ Vue.component('task-ordered', {
 });
 
 Vue.component('task-list', {
-    template: '<ul><slot></slot></ul>',
+    template:
+        `
+            <div>
+                <task-item v-for="task in tasks" :key="task.id">{{ task.task }}</task-item>
+            </div>
+        `,
+    data() {
+        return {
+            tasks: [
+                { task: 'Pet the dog', completed: false },
+                { task: 'Eat rice', completed: true },
+                { task: 'Get a job', completed: false },
+            ]
+        }
+    }
+
 });
 
 new Vue({
