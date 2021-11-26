@@ -1,3 +1,5 @@
+// import Vue from "vue";
+
 Vue.component('task-item', {
     template: '<li><slot></slot></li>',
 });
@@ -47,9 +49,8 @@ Vue.component('twitter-hero', {
                 </article>
         `,
     methods: {
-        toggleMessage(): boolean {
-            isVisible = !isVisible;
-            return isVisible;
+        toggleMessage() {
+            this.isVisible = !this.isVisible;
         }
     }
 })

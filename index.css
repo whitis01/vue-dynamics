@@ -1,0 +1,16 @@
+.message {
+    padding: 50px;
+    width: 70%;
+}
+.message.is-dark {
+    background-color: white;
+}
+.message-header {
+    background-color: aquamarine;
+    width: auto;
+    height: auto;
+    padding: 10px;
+}
+.message-body {
+    background-color: aquamarine;
+}
