@@ -58,26 +58,29 @@ Vue.component('twitter-hero', {
 Vue.component('bulma-modal', {
     template:
     `
-        <div class="modal is-active" v-show="isVisible">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-                <div class="box">
-                    <h1>Hello World!!"</h1>
-                    <p>This is something isn't it?</p>
+        <div>
+            <div class="modal is-active" v-show="showModal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <div class="box">
+                        <h1>Hello World!!"</h1>
+                        <p>This is something isn't it?</p>
+                    </div>
                 </div>
+                <button class="modal-close is-large" aria-label="close" @click="showModal = false"></button>
             </div>
-            <button class="modal-close is-large" aria-label="close" @click="toggleMessage"></button>
+            <button @click="showModal = true">Show Modal</button>
         </div>
     `
     ,
     data() {
         return {
-            isVisible: false,
+            showModal: false,
         }
     },
     methods: {
         toggleMessage() {
-            this.isVisible = !this.isVisible;
+            this.showModal = !this.showModal;
         }
     }
 
