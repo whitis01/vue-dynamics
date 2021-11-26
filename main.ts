@@ -64,12 +64,12 @@ Vue.component('bulma-modal', {
                 <div class="modal-content">
                     <div class="box">
                         <h1>Hello World!!"</h1>
-                        <p>This is something isn't it?</p>
+                        <p><slot></slot></p>
                     </div>
                 </div>
-                <button class="modal-close is-large" aria-label="close" @click="showModal = false"></button>
+                <button class="modal-close is-large" aria-label="close" @click="hideModal"></button>
             </div>
-            <button @click="showModal = true">Show Modal</button>
+            <button @click="displayModal">Show Modal</button>
         </div>
     `
     ,
@@ -79,9 +79,12 @@ Vue.component('bulma-modal', {
         }
     },
     methods: {
-        toggleMessage() {
-            this.showModal = !this.showModal;
-        }
+        displayModal() {
+            this.showModal = true;
+        },
+        hideModal() {
+            this.showModal = false;
+        },
     }
 
 });
