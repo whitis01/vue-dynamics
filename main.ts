@@ -27,7 +27,7 @@ Vue.component('task-list', {
 
 Vue.component('twitter-hero', {
     name: 'twitter-hero',
-    props: [ 'title', 'message' ],
+    props: { 'title': { required: true}, 'message': { required: true } },
     data() {
         return {
             isVisible: true,
@@ -47,8 +47,9 @@ Vue.component('twitter-hero', {
                 </article>
         `,
     methods: {
-        toggleMessage(): void {
-            this.isVisible = !this.isVisible;
+        toggleMessage(): boolean {
+            isVisible = !isVisible;
+            return isVisible;
         }
     }
 })
