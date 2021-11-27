@@ -89,6 +89,45 @@ Vue.component('bulma-modal', {
 
 });
 
+Vue.component('bulma-tabs', {
+    template:
+    `
+        <div>
+            <div class="tabs is-centered">
+                <ul>
+                    <li v-for="tab in bulmaTabs"><a href="#">{{ tab.name }}</a></li>
+                </ul>
+            </div>
+            <div class="bulma-tabs-details">
+                <slot></slot>
+            </div>
+        </div>
+    `,
+    data() {
+        return {
+            bulmaTabs: [],
+        };
+    },
+    mounted() {
+        console.log(this.$children[0].$el.innerHTML);
+        console.log(this.bulmaTabs);
+    },
+    created() {
+        this.bulmaTabs = this.$children;
+    },
+});
+
+Vue.component('bulma-tab', {
+    template:
+    `
+        <div><slot></slot></div>
+    `,
+    props: {
+        name: { required: true },
+    }
+
+});
+
 new Vue({
     el: '#root',
 });
