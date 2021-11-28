@@ -95,7 +95,9 @@ Vue.component('bulma-tabs', {
         <div>
             <div class="tabs is-centered">
                 <ul>
-                    <li v-for="tab in bulmaTabs"><a href="#">{{ tab.name }}</a></li>
+                    <li v-for="tab in bulmaTabs" :class="{ 'is-active': tab.isActive }">
+                      <a :href="tab.href" @click="selectTab(tab)">{{ tab.name }}</a>
+                    </li>
                 </ul>
             </div>
             <div class="bulma-tabs-details">
@@ -115,15 +117,36 @@ Vue.component('bulma-tabs', {
     created() {
         this.bulmaTabs = this.$children;
     },
+    methods: {
+        selectTab(selectedTab) {
+            this.bulmaTabs.forEach(tab => {
+                tab.isActive = (tab.name == selectedTab.name);
+            });
+        },
+    },
 });
 
 Vue.component('bulma-tab', {
     template:
     `
-        <div><slot></slot></div>
+        <div v-show="isActive"><slot></slot></div>
     `,
     props: {
         name: { required: true },
+        selected: { default: false },
+    },
+    data() {
+        return {
+            isActive: false
+        };
+    },
+    computed: {
+        href() {
+            return '#' + this.name.toLowerCase().replace(/ /g, '-');
+        }
+    },
+    mounted() {
+        this.isActive = this.selected;
     }
 
 });

@@ -7,72 +7,79 @@
     </head> 
 
     <body>
-        <div id="root">
-            <h1> {{ message }} </h1>
-            <h1> {{ reversedMessage }}</h1>
-            <h2>All Tasks</h2>
-            <task-list></task-list>
-            <h2>Incomplete Tasks</h2>
-            <ul>
-                <li v-for="task in incompleteTasks" v-text="task.description"></li>
-            </ul>
-            <h2>Completed Tasks</h2>
-            <ul>
-                <li v-for="task in completedTasks" v-text="task.description"></li>
-            </ul>
-            <task-ordered>
-                <task-item>Isaac is Great</task-item>
-                <task-item>Do not forget bullet point one</task-item>
-            </task-ordered>
-            <task-ordered><li>Still Great</li></task-ordered>
-            <twitter-hero title="Hello World!" message="I guess the Yankees are my daddy now."></twitter-hero>
-            <bulma-modal>I think therefore I am?</bulma-modal>
-            <bulma-modal>Samson! Stop drinking out of the toilet and eat that mouse!</bulma-modal>
-            <bulma-tabs>
-                <bulma-tab class="money-pictures" name="Pictures" :selected="true">
-                    American Gothic.
-                </bulma-tab>
-                <bulma-tab class="money-music" name="Music">
-                    The day the music died.
-                </bulma-tab>
-                <bulma-tab class="money-videos" name="Videos">
-                    All former rappers go broke.
-                </bulma-tab>
-                <bulma-tab class="money-documents" name="Documents">
-                    The Pentagon Papers.
-                </bulma-tab>
-            </bulma-tabs>
+        <div id="app" class="container">
+            <event-custom></event-custom>
         </div>
+<!--        <div id="root" class="container">-->
+<!--            <h1> {{ message }} </h1>-->
+<!--            <h1> {{ reversedMessage }}</h1>-->
+<!--            <h2>All Tasks</h2>-->
+<!--            <task-list></task-list>-->
+<!--            <h2>Incomplete Tasks</h2>-->
+<!--            <ul>-->
+<!--                <li v-for="task in incompleteTasks" v-text="task.description"></li>-->
+<!--            </ul>-->
+<!--            <h2>Completed Tasks</h2>-->
+<!--            <ul>-->
+<!--                <li v-for="task in completedTasks" v-text="task.description"></li>-->
+<!--            </ul>-->
+<!--            <task-ordered>-->
+<!--                <task-item>Isaac is Great</task-item>-->
+<!--                <task-item>Do not forget bullet point one</task-item>-->
+<!--            </task-ordered>-->
+<!--            <task-ordered><li>Still Great</li></task-ordered>-->
+<!--            <twitter-hero title="Hello World!" message="I guess the Yankees are my daddy now."></twitter-hero>-->
+<!--            <bulma-modal>I think therefore I am?</bulma-modal>-->
+<!--            <bulma-modal>Samson! Stop drinking out of the toilet and eat that mouse!</bulma-modal>-->
+<!--            <bulma-tabs>-->
+<!--                <bulma-tab class="money-pictures" name="Pictures" :selected="true">-->
+<!--                    American Gothic.-->
+<!--                </bulma-tab>-->
+<!--                <bulma-tab class="money-music" name="Music">-->
+<!--                    The day the music died.-->
+<!--                </bulma-tab>-->
+<!--                <bulma-tab class="money-videos" name="Videos">-->
+<!--                    All former rappers go broke.-->
+<!--                </bulma-tab>-->
+<!--                <bulma-tab class="money-documents" name="Documents">-->
+<!--                    The Pentagon Papers.-->
+<!--                </bulma-tab>-->
+<!--                <bulma-tab class="money-fire-fest" name="Fire Fest">-->
+<!--                    Phoenix is down and not getting up.-->
+<!--                </bulma-tab>-->
+<!--            </bulma-tabs>-->
+<!--        </div>-->
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" type="text/javascript"></script>
-        <script>
-            var app = new Vue({
-                el: '#root',
-                data: {
-                    message: 'Hello World',
-                    tasks: [
-                        { description: 'Pet Samson', completed: false },
-                        { description: 'Eat peanut butter', completed: false },
-                        { description: 'Take a shower', completed: true },
-                        { description: 'Go for a run', completed: false },
-                        { description: 'Get groceries', completed: true },
-                        { description: 'Left foot right stomp', completed: false }
-                    ]
-                },
-                computed: {
-                    reversedMessage() {
-                        return this.message.split('').reverse().join('');
-                    },
-                    incompleteTasks() {
-                        return this.tasks.filter(task => ! task.completed);
-                    },
-                    completedTasks() {
-                        return this.tasks.filter(task => task.completed);
-                    }
-                },
-            })
+<!--        <script>-->
+<!--            var app = new Vue({-->
+<!--                el: '#root',-->
+<!--                data: {-->
+<!--                    message: 'Hello World',-->
+<!--                    tasks: [-->
+<!--                        { description: 'Pet Samson', completed: false },-->
+<!--                        { description: 'Eat peanut butter', completed: false },-->
+<!--                        { description: 'Take a shower', completed: true },-->
+<!--                        { description: 'Go for a run', completed: false },-->
+<!--                        { description: 'Get groceries', completed: true },-->
+<!--                        { description: 'Left foot right stomp', completed: false }-->
+<!--                    ]-->
+<!--                },-->
+<!--                computed: {-->
+<!--                    reversedMessage() {-->
+<!--                        return this.message.split('').reverse().join('');-->
+<!--                    },-->
+<!--                    incompleteTasks() {-->
+<!--                        return this.tasks.filter(task => ! task.completed);-->
+<!--                    },-->
+<!--                    completedTasks() {-->
+<!--                        return this.tasks.filter(task => task.completed);-->
+<!--                    }-->
+<!--                },-->
+<!--            })-->
 
-        </script>
-        <script src="main.ts"></script>
+<!--        </script>-->
+<!--        <script src="main.ts"></script>-->
+        <script src="mainEvent.ts"></script>
     </body>
 </html>
 
