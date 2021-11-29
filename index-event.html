@@ -11,7 +11,9 @@
 </head>
 <body>
     <div id="root" class="container">
-        <money-coupon></money-coupon>
+        <money-coupon @tell-the-world="onCouponApplied" ></money-coupon>
+        <h1 v-if="masterTold">Your master has been told, good day.</h1>
+        <button v-if="masterTold" @click="tellAnotherMaster">Do you want to change masters?</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" type="text/javascript"></script>
