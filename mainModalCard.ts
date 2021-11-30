@@ -34,6 +34,7 @@ Vue.component('money-modal-card', {
     },
     methods: {
         showModal() {
+            console.log(Vue.version);
             this.isVisible = true;
         },
         hideModal() {
