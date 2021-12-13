@@ -25,6 +25,4 @@ eye toward selecting the best ideas and putting them in front
 of those who seek out demonstrations of good and solid 
 coding habits and practices. 
 
-# ** I Will Be Out Until 12/12/2021 **
-
 **By: Isaac A. White**
